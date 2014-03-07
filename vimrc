@@ -6,7 +6,7 @@ set nocompatible
 set sw=2
 set background=dark
 set nomodeline
-set tabstop=2
+set tabstop=4
 set nu
 set paste
 
