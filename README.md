@@ -1,5 +1,5 @@
 # Confiurations 
 .vimrc:
-    Setting for vim
+    Setting for vim  
 .cshrc:
-    Setting for tcsh
+    Setting for tcsh  
