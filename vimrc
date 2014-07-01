@@ -3,7 +3,7 @@ set backspace=2
 set cindent
 set hls
 set nocompatible
-set sw=2
+set sw=4
 set background=dark
 set nomodeline
 set tabstop=4
