@@ -3,12 +3,14 @@ set backspace=2
 set cindent
 set hls
 set nocompatible
-set sw=4
 set background=dark
 set nomodeline
-set tabstop=4
 set nu
 set paste
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 syntax on
 highlight Comment ctermfg=darkcyan
