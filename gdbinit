@@ -3820,4 +3820,22 @@ end
 document esp
 Syntax: esp
 | dump 10 DWORD from esp
+
 end
+
+define rsp
+    x/10xg $rsp
+end
+document rsp
+Syntax: rsp
+| dump 10 DWORD from rsp
+end
+
+define pid
+	shell ps aux | grep $arg0
+end
+document pid
+Syntax: pid PROCESS
+| list process pid
+end
+
