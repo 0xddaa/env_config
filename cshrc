@@ -11,17 +11,19 @@ alias la	ls -a
 alias lf	ls -FA
 alias ll	ls -alF
 alias py	python
+alias ls 'gnuls --color=auto --show-control-chars'
 
 # A righteous umask
 umask 22
-# JAVA
-setenv JAVA_HOME /usr/local/diablo-jdk1.6.0
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin /usr/local/diablo-jdk1.6.0/bin)
-setenv CLASSPATH $JAVA_HOME/lib/tools.jar:/usr/local/share/java/classes/:./
 
 setenv	EDITOR  vim
-setenv	PAGER	more
+setenv	PAGER	less
 setenv	BLOCKSIZE	K
+setenv LC_CTYPE en_US.ISO8859-1
+setenv LC_ALL zh_TW.UTF-8
+setenv LANG zh_TW.UTF-8
+setenv LSCOLORS "DxGxcxdxCxegedabagacad"
+
 
 if ($?prompt) then
 	# An interactive shell -- set some stuff up
@@ -37,12 +39,6 @@ if ($?prompt) then
 	endif
 endif
 
-setenv LC_CTYPE en_US.ISO8859-1
-setenv LC_ALL zh_TW.UTF-8
-setenv LANG zh_TW.UTF-8
-setenv LSCOLORS "DxGxcxdxCxegedabagacad"
-
 set autolist
 set prompt="%B%{\033[1;34m%}%n%{\033[m%}%{\033[1;32m%}@%{\033[m%}%{\033[1;36m%}%m%{\033[m%}%{\033[1;33m%}[%{\033[m%}%{\033[1;31m%}%/%{\033[m%}%{\033[1;33m%}]%{\033[m%}%{\033[1;37m%}#%{\033[m%}"
-
-alias ls 'gnuls --color=auto --show-control-chars'
+complete sudo 'n/-l/u/' 'p/1/c/'
