@@ -1,2 +1,3 @@
 caption always "%{=B Bb} %{=B WK}%-w%<%{=B Yk} %n %t /%{=B WK}%+w%-02=%{=B B"
 hardstatus alwayslastline "%{=b bW} {%l}%018= %{=B WK} $HOST %-027=%{YK} %Y-%m"
+cjkwidth off
