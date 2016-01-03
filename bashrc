@@ -115,3 +115,6 @@ fi
 
 export EDITOR="vim"
 alias py='python'
+
+PATH=$PATH:code/script/
+export PATH
