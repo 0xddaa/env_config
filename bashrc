@@ -113,8 +113,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
+# alias
 alias py='python'
 
-PATH=$PATH:~/code/script/
-export PATH
+# environment variable
+export PATH=$PATH:~/code/script/
+export EDITOR="vim"
