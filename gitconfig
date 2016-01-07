@@ -5,3 +5,4 @@
     st = status
     br = branch
     cm = commit
+    co = checkout
