@@ -3839,3 +3839,9 @@ Syntax: pid PROCESS
 | list process pid
 end
 
+define k
+    kill
+end
+Syntax: k
+| alias of `kill` command 
+end
