@@ -3842,7 +3842,7 @@ end
 define k
     kill
 end
-document
+document k
 Syntax: k
 | alias of `kill` command 
 end
