@@ -64,3 +64,4 @@ let g:ycm_complete_in_comments = 1              " complete in comment
 let g:ycm_min_num_of_chars_for_completion = 2   " toogle after 2 char
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_complete_in_strings = 1               " toogle in string (double quote)
+let g:ycm_autoclose_preview_window_after_completion = 1
