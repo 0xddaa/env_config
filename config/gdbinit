@@ -1,0 +1,3 @@
+source ~/tools/peda/peda.py
+source ~/tools/Pwngdb/pwngdb.py
+source ~/code/gggdb/gggdbinit
