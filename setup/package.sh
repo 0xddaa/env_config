@@ -17,7 +17,7 @@ if [ "$(uname -i)" == "x86_64" ]; then
     apt-get -y install gcc g++ nasm libssl-dev libffi-dev gcc-multilib g++-multilib
     apt-get -y install libc-dev:i386 libssl-dev:i386 libc6-dev-i386 libffi-dev:i386
 elif [ "$(uname -i)" == "aarch64" ]; then
-    apt-get -y install gcc g++ nasm libssl-dev libffi-dev
+    apt-get -y install gcc g++ nasm libssl-dev libffi-dev make
 fi
 
 # python package
