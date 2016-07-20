@@ -9,8 +9,8 @@ fi
 apt-get -y update
 apt-get -y upgrade
 
-# SA tool
-apt-get -y install git nmap gdb
+# usual tool
+apt-get -y install git nmap gdb gdbserver
 
 # complie & library
 if [ "$(uname -i)" == "x86_64" ]; then
