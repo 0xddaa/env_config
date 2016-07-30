@@ -23,5 +23,5 @@ fi
 # python package
 apt-get -y install python-dev ipython
 wget -O- https://bootstrap.pypa.io/get-pip.py | python
-pip install pwntools
-pip install requests 
+pip install pwntools request pycrypto
+
