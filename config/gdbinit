@@ -1,6 +1,6 @@
 source ~/tools/peda/peda.py
 source ~/tools/Pwngdb/pwngdb.py
-source ~/code/gggdb/gggdbinit
+source ~/tools/iddaa/gdbscript/gdbinit
 
 # my gdb function
 define re
