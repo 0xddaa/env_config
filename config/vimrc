@@ -16,6 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'valloric/youcompleteme'
 " directory
 Plugin 'scrooloose/nerdtree'
+" gtags
+Plugin 'aceofall/gtags.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,3 +67,10 @@ let g:ycm_min_num_of_chars_for_completion = 2   " toogle after 2 char
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_complete_in_strings = 1               " toogle in string (double quote)
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" gtags.vim
+set cscopetag
+set cscopeprg="gtags-cscope"
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
