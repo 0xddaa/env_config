@@ -6,3 +6,5 @@
     br = branch
     cm = commit
     co = checkout
+    la = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    dc = diff --cached
