@@ -1,6 +1,11 @@
 source ~/tools/peda/peda.py
 source ~/tools/Pwngdb/pwngdb.py
+source ~/tools/Pwngdb/angelheap/gdbinit.py
 source ~/tools/iddaa/gdbscript/gdbinit
+
+define hook-run
+    python import angelheap; angelheap.init_angelheap()
+end
 
 # my gdb function
 define re
