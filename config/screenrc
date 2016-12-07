@@ -9,3 +9,7 @@ shell -$SHELL
 logtstamp on
 logtstamp after 1
 cjkwidth off
+
+# for shift right and left arrows
+bindkey ^[[1;2D prev
+bindkey ^[[1;2C next
