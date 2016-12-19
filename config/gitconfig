@@ -8,3 +8,5 @@
     co = checkout
     la = log --graph --decorate --pretty=oneline --abbrev-commit --all
     dc = diff --cached
+[push]
+	default = matching
