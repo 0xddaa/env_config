@@ -41,7 +41,6 @@ set hls
 set background=dark
 set nomodeline
 set nu
-set paste
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
