@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RCFILES="bashrc cshrc gdbinit gitconfig screenrc vimrc"
+RCFILES="bashrc cshrc gdbinit gitconfig screenrc vimrc tmux.conf"
 
 for f in $RCFILES; do
     DEST=~/.$f
