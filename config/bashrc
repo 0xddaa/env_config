@@ -115,6 +115,7 @@ fi
 
 # alias
 alias py='python'
+alias tmux='TERM=xterm-256color tmux -2'
 
 # environment variable
 export PATH=$PATH:~/code/script/
