@@ -10,3 +10,6 @@ done
 
 echo "[*] unlink ipythonrc.py ..."
 rm -f ~/.ipython/profile_default/startup/ipythonrc.py
+
+echo "[*] unlink snippets ..."
+unlink ~/.vim/UltiSnips

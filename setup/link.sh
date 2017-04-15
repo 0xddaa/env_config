@@ -11,3 +11,6 @@ done
 
 echo "[*] link ipythonrc.py ..."
 ln -s ~/env_config/config/ipythonrc.py ~/.ipython/profile_default/startup/ipythonrc.py
+
+echo "[*] link snippets ..."
+ln -s ~/env_config/snippets/ ~/.vim/UltiSnips

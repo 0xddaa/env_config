@@ -1,0 +1,43 @@
+snippet pwn "ctf pwn challenge"
+#!/usr/bin/env python
+import sys, os
+from pwn import *
+
+HOST, PORT = (sys.argv[1], sys.argv[2]) if len(sys.argv) > 2 else ('localhost', 5566)
+elf = ELF('${1:`!p elf = os.getcwd().split('/')[-1]; snip.rv = elf if os.path.exists(elf) else ''`}'); context.word_size = elf.elfclass
+with context.local(log_level='ERROR'):
+	libc = ELF('libc.so.6') if os.path.exists('libc.so.6') else elf.libc
+if not libc: log.warning('Cannot open libc.so.6')
+
+r = remote(HOST, PORT)
+
+r.interactive()
+endsnippet
+
+snippet conn
+#!/usr/bin/env python
+from pwn import *
+HOST, PORT = (sys.argv[1], sys.argv[2]) if len(sys.argv) > 2 else ('localhost', 5566)
+
+r = remote(HOST, PORT)
+r.interactive()
+endsnippet
+
+snippet sla
+r.sendlineafter('${1:> }', '${2}')
+endsnippet
+
+snippet pause
+raw_input('wait for gdb...')
+endsnippet
+
+snippet func
+def ${1:func}(${3:choice}, ${4:data}):
+	r.sendlineafter('${2}', $3)
+	r.sendlineafter('$2', $4)
+
+endsnippet
+
+snippet info
+log.info('${1}_base: {}'.format(hex(${2}_base)))
+endsnippet
