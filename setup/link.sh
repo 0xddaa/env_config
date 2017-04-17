@@ -10,7 +10,11 @@ for f in $RCFILES; do
 done
 
 echo "[*] link ipythonrc.py ..."
-ln -s ~/env_config/config/ipythonrc.py ~/.ipython/profile_default/startup/ipythonrc.py
+DEST=~/.ipython/profile_default/startup/ipythonrc.py
+[ -f "$DEST" ] && rm -f "$DEST"
+ln -s ~/env_config/config/ipythonrc.py "$DEST"
 
 echo "[*] link snippets ..."
-ln -s ~/env_config/snippets/ ~/.vim/UltiSnips
+DEST=~/.vim/UltiSnips
+[ -f "$DEST" ] && rm -f "$DEST"
+mkdir -p ~/.vim && ln -s ~/env_config/snippets/ ~/.vim/UltiSnips
