@@ -32,12 +32,12 @@ raw_input('wait for gdb...')
 endsnippet
 
 snippet func
-def ${1:func}(${3:choice}, ${4:data}):
-	r.sendlineafter('${2}', $3)
+def ${1:func}(${4:data}):
+	r.sendlineafter('${2}', '${3}')
 	r.sendlineafter('$2', $4)
 
 endsnippet
 
 snippet info
-log.info('${1}_base: {}'.format(hex(${2}_base)))
+log.info('${1}: {}'.format())
 endsnippet
