@@ -10,4 +10,6 @@ for f in $RCFILES; do
 done
 
 echo "[*] link ipythonrc.py ..."
-ln -s ~/env_config/config/ipythonrc.py ~/.ipython/profile_default/startup/ipythonrc.py
+DEST=~/.ipython/profile_default/startup/ipythonrc.py
+[ -f "$DEST" ] && rm -f "$DEST"
+ln -s ~/env_config/config/ipythonrc.py "$DEST"
