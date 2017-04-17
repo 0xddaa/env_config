@@ -1,5 +1,5 @@
 #!/bin/bash
-# test on ubuntu 14.04 trusty
+# test on ubuntu 16.04 xenial
 
 if [ "$EUID" -ne 0 ]; then
     echo "please run as root."
@@ -10,7 +10,7 @@ apt-get -y update
 apt-get -y upgrade
 
 # usual tool
-apt-get -y install git nmap gdb gdbserver make
+apt-get -y install git nmap gdb gdbserver make cmake
 
 # complie & library
 if [ "$(uname -i)" == "x86_64" ]; then
@@ -27,3 +27,5 @@ pip install pwntools request pycrypto
 
 # work environment
 pip install powerline-status
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+~/.vim/bundle/youcompleteme/install.py --clang-completer
