@@ -25,3 +25,5 @@ apt-get -y install python-dev ipython
 wget -O- https://bootstrap.pypa.io/get-pip.py | python
 pip install pwntools request pycrypto
 
+# work environment
+pip install powerline-status
