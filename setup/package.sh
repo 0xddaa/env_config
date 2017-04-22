@@ -1,5 +1,5 @@
 #!/bin/bash
-# test on ubuntu 14.04 trusty
+# test on ubuntu 16.04 xenial
 
 if [ "$EUID" -ne 0 ]; then
     echo "please run as root."
