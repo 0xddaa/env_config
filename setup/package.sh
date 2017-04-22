@@ -26,4 +26,5 @@ wget -O- https://bootstrap.pypa.io/get-pip.py | python
 pip install pwntools request pycrypto
 
 # work environment
+apt-get -y install mosh global
 pip install powerline-status
