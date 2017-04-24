@@ -1,7 +1,6 @@
 source ~/tools/pwndbg/gdbinit.py
 source ~/tools/Pwngdb/pwngdb.py
 source ~/tools/Pwngdb/angelheap/gdbinit.py
-source ~/tools/iddaa/gdbscript/gdbinit
 
 define hook-run
     python import angelheap; angelheap.init_angelheap()
@@ -37,3 +36,6 @@ Syntax: rsp
 | dump 10 DWORD from rsp
 end
 
+# for pwndbg
+set context-sections regs disasm code
+alias -a at = auto_attach
