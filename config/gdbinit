@@ -1,5 +1,4 @@
 source ~/tools/pwndbg/gdbinit.py
-source ~/tools/Pwngdb/pwngdb.py
 source ~/tools/Pwngdb/angelheap/gdbinit.py
 
 define hook-run
@@ -38,4 +37,3 @@ end
 
 # for pwndbg
 set context-sections regs disasm code
-alias -a at = auto_attach
