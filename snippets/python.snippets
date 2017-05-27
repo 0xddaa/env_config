@@ -6,7 +6,7 @@ from pwn import *
 HOST, PORT = (sys.argv[1], sys.argv[2]) if len(sys.argv) > 2 else ('localhost', 5566)
 elf = ELF('${1:`!p elf = os.getcwd().split('/')[-1]; snip.rv = elf if os.path.exists(elf) else ''`}'); context.word_size = elf.elfclass
 with context.local(log_level='ERROR'):
-	libc = ELF('libc.so.6') if os.path.exists('libc.so.6') else elf.libc
+    libc = ELF('libc.so.6') if os.path.exists('libc.so.6') else elf.libc
 if not libc: log.warning('Cannot open libc.so.6')
 
 r = remote(HOST, PORT)
@@ -27,14 +27,14 @@ snippet sla
 r.sendlineafter('${1:> }', '${2}')
 endsnippet
 
-snippet pause
-raw_input('wait for gdb...')
+snippet p
+pause()
 endsnippet
 
 snippet func
 def ${1:func}(${4:data}):
-	r.sendlineafter('${2}', '${3}')
-	r.sendlineafter('$2', $4)
+    r.sendlineafter('${2}', '${3}')
+    r.sendlineafter('$2', $4)
 
 endsnippet
 
@@ -44,4 +44,24 @@ endsnippet
 
 snippet base
 log.info('${1}_base: {}'.format(hex($1_base)))
+endsnippet
+
+snippet fmtchar
+def fmtchar(prev_word, word, index, byte = 1):
+    fmt = ''
+    if word - prev_word > 0 :
+        result = word - prev_word
+        fmt += '%' + str(result) + 'c'
+    elif word == prev_word :
+        result = 0
+    else :
+        result = 256**byte - prev_word + word
+        fmt += '%' + str(result) + 'c'
+    if byte == 2 :
+        fmt += '%' + str(index) + '$hn'
+    elif byte == 4 :
+        fmt += '%' + str(index) + '$n'
+    else :
+        fmt += '%' + str(index) + '$hhn'
+    return fmt
 endsnippet
