@@ -65,3 +65,19 @@ def fmtchar(prev_word, word, index, byte = 1):
         fmt += '%' + str(index) + '$hhn'
     return fmt
 endsnippet
+
+snippet z3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from z3 import *
+
+x = [BitVec("x_%d" % i, 8) for i in range(32)]
+
+s = Solver()
+s.add()
+
+assert s.check() == sat
+
+m = s.model()
+print "".join([chr(m[x[i]].as_long()) for i in range(32)])
+endsnippet
