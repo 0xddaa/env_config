@@ -13,3 +13,10 @@ echo "[*] link ipythonrc.py ..."
 DEST=~/.ipython/profile_default/startup/ipythonrc.py
 [ -f "$DEST" ] && rm -f "$DEST"
 ln -s ~/env_config/config/ipythonrc.py "$DEST"
+
+echo "[*] link powerline.conf ..."
+DIR=~/.config/powerline/
+DEST="$DIR/config.json"
+! [ -d "$DIR" ] && mkdir -p "$DIR"
+[ -f "$DEST" ] && rm -f "$DEST"
+ln -s ~/env_config/config/powerline.conf "$DEST"
