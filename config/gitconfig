@@ -7,6 +7,8 @@
     cm = commit
     co = checkout
     la = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    df = diff
+    cp = cherry-pick
     dc = diff --cached
 [push]
 	default = matching
