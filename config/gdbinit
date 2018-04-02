@@ -1,11 +1,18 @@
+### pwndbg ###
 source ~/tools/pwndbg/gdbinit.py
+set context-sections regs disasm code
+
+### peda ###
+#source ~/tools/peda/peda.py
+#source ~/tools/Pwngdb/pwngdb.py
+
+### global ###
 source ~/tools/Pwngdb/angelheap/gdbinit.py
 
 define hook-run
     python import angelheap; angelheap.init_angelheap()
 end
 
-# my gdb function
 define re
     if $argc == 0
         target remote localhost:4444
@@ -34,6 +41,3 @@ document rsp
 Syntax: rsp
 | dump 10 DWORD from rsp
 end
-
-# for pwndbg
-set context-sections regs disasm code
