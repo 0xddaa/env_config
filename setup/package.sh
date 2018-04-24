@@ -26,7 +26,7 @@ wget -O- https://bootstrap.pypa.io/get-pip.py | python
 pip install pwntools request pycrypto
 
 # work environment
-apt-get -y install mosh global silversearcher-ag
+apt-get -y install mosh global silversearcher-ag autojump
 pip install powerline-status
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ~/.vim/bundle/youcompleteme/install.py --clang-completer
