@@ -123,3 +123,6 @@ alias se='chmod +x'
 # environment variable
 export PATH=$PATH:~/code/script/
 export EDITOR="vim"
+
+# for third-party package
+. /usr/share/autojump/autojump.bash
