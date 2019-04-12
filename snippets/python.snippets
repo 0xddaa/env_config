@@ -47,23 +47,11 @@ log.info('${1}_base: {}'.format(hex($1_base)))
 endsnippet
 
 snippet fmtchar
-def fmtchar(prev_word, word, index, byte = 1):
-    fmt = ''
-    if word - prev_word > 0 :
-        result = word - prev_word
-        fmt += '%' + str(result) + 'c'
-    elif word == prev_word :
-        result = 0
-    else :
-        result = 256**byte - prev_word + word
-        fmt += '%' + str(result) + 'c'
-    if byte == 2 :
-        fmt += '%' + str(index) + '$hn'
-    elif byte == 4 :
-        fmt += '%' + str(index) + '$n'
-    else :
-        fmt += '%' + str(index) + '$hhn'
-    return fmt
+def fmtchar(prev, word, idx, byte = 1):
+    typ = {0: '$p', 1: '$hhn', 2: '$hn', 4: '$n'}
+    cnt = word - prev if word - prev >= 0 else 256**byte - prev + word
+    pad = '' if word == prev else '%{}c'.format(cnt)
+    return '{}%{}{}'.format(pad, idx, typ[byte])
 endsnippet
 
 snippet z3
