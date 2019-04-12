@@ -13,6 +13,8 @@ define hook-run
     python import angelheap; angelheap.init_angelheap()
 end
 
+set print elements 0
+
 define re
     if $argc == 0
         target remote localhost:4444
