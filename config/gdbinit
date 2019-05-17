@@ -1,6 +1,7 @@
 ### pwndbg ###
 source ~/tools/pwndbg/gdbinit.py
 set context-sections regs disasm code
+set ida-enabled off
 
 ### peda ###
 #source ~/tools/peda/peda.py
