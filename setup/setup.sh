@@ -10,5 +10,4 @@ pushd ~/env_config/setup
 ./link.sh
 ./tool.sh
 ./hosts.sh
-./libc.sh
 popd
