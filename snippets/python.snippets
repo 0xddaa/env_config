@@ -4,7 +4,7 @@ import sys, os
 from pwn import *
 
 HOST, PORT = (sys.argv[1], sys.argv[2]) if len(sys.argv) > 2 else ('localhost', 5566)
-elf = ELF('${1:`!p elf = os.getcwd().split('/')[-1]; snip.rv = elf if os.path.exists(elf) else ''`}'); context.arch = elf.arch
+elf = ELF('${1:`find $PWD -type f -name $(basename $PWD)`}'); context.arch = elf.arch
 with context.local(log_level='ERROR'):
     libc = ELF('libc.so.6') if os.path.exists('libc.so.6') else elf.libc
 if not libc: log.warning('Cannot open libc.so.6')
