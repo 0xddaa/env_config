@@ -27,5 +27,9 @@ pip install pwntools request pycrypto
 # work environment
 apt -y install mosh global silversearcher-ag autojump
 pip install powerline-status
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-~/.vim/bundle/youcompleteme/install.py --clang-completer
+
+# vim plugin
+HOME="/home/$(id -nu "$SUDO_UID")"
+git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+vim  -c 'VundleInstall' -c 'qa!'
+"$HOME/.vim/bundle/youcompleteme/install.py" --clang-completer
