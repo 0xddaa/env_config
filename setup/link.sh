@@ -10,6 +10,7 @@ for f in $RCFILES; do
 done
 
 echo "[*] link ipythonrc.py ..."
+echo exit | ipython3 > /dev/null # init ipython folder
 DEST=~/.ipython/profile_default/startup/ipythonrc.py
 [ -f "$DEST" ] && rm -f "$DEST"
 ln -s ~/env_config/config/ipythonrc.py "$DEST"

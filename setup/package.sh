@@ -1,30 +1,29 @@
 #!/bin/bash
-# test on ubuntu 16.04 xenial
+# test on ubuntu 20.04
 
 if [ "$EUID" -ne 0 ]; then
     echo "please run as root."
     exit
 fi
 
-apt-get -y update
-apt-get -y upgrade
+apt -y update
+apt -y upgrade
 
 # usual tool
-apt-get -y install git nmap gdb gdbserver make
+apt -y install git nmap gdb gdbserver make
 
 # complie & library
 if [ "$(uname -i)" == "x86_64" ]; then
-    apt-get -y install gcc g++ nasm libssl-dev libffi-dev gcc-multilib g++-multilib
-    apt-get -y install libc-dev:i386 libssl-dev:i386 libc6-dev-i386 libffi-dev:i386 libc6-dbg libc6-dbg:i386
+    apt -y install gcc g++ nasm libssl-dev libffi-dev gcc-multilib g++-multilib
 elif [ "$(uname -i)" == "aarch64" ]; then
-    apt-get -y install gcc g++ nasm libssl-dev libffi-dev
+    apt -y install gcc g++ nasm libssl-dev libffi-dev
 fi
 
 # python package
-apt-get -y install python-dev ipython
+apt -y install python-is-python3 python3-dev ipython3
 wget -O- https://bootstrap.pypa.io/get-pip.py | python
 pip install pwntools request pycrypto
 
 # work environment
-apt-get -y install mosh global silversearcher-ag autojump
+apt -y install mosh global silversearcher-ag autojump
 pip install powerline-status
