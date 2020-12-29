@@ -1,0 +1,15 @@
+<Configuration>
+    <Add OfficeClientEdition="64" Channel="PerpetualVL2019">
+        <Product ID="ProPlus2019Volume">
+            <Language ID="zh-tw" />
+            <ExcludeApp ID="Outlook" />
+            <ExcludeApp ID="Access" />
+            <ExcludeApp ID="Publisher" />
+            <ExcludeApp ID="OneNote" />
+            <ExcludeApp ID="Groove" />
+            <ExcludeApp ID="Lync" />
+            <ExcludeApp ID="OneDrive" />
+            <ExcludeApp ID="Skype" />
+        </Product>
+    </Add>
+</Configuration>
