@@ -1,0 +1,64 @@
+{
+    "$schema": "https://aka.ms/teminal-pofiles-schema",
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "profiles":
+    {
+        "defaults":
+        {
+        },
+        "list":
+        [
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "colorScheme": "Monokai Night"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "cmd",
+                "commandline": "cmd.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Windows.Terminal.Wsl"
+            }
+        ]
+    },
+    "schemes":
+    [
+        {
+                "name" : "Monokai Night",
+                "background" : "#1f1f1f",
+                "foreground" : "#f8f8f8",
+                "black" : "#1f1f1f",
+                "blue" : "#6699df",
+                "cyan" : "#e69f66",
+                "green" : "#a6e22e",
+                "purple" : "#ae81ff",
+                "red" : "#f92672",
+                "white" : "#f8f8f2",
+                "yellow" : "#e6db74",
+                "brightBlack" : "#75715e",
+                "brightBlue" : "#66d9ef",
+                "brightCyan" : "#e69f66",
+                "brightGreen" : "#a6e22e",
+                "brightPurple" : "#ae81ff",
+                "brightRed" : "#f92672",
+                "brightWhite" : "#f8f8f2",
+                "brightYellow" : "#e6db74"
+        }
+    ],
+    "keybindings": [
+    ]
+}
