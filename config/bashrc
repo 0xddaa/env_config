@@ -116,9 +116,9 @@ fi
 # alias
 alias py='python'
 alias tmux='TERM=xterm-256color tmux -2'
-alias ..='cd ..'
-alias ...='cd ../..'
 alias se='chmod +x'
+alias clip='clip.exe'
+alias paste='powershell.exe Get-Clipboard'
 
 # environment variable
 export PATH=$PATH:~/code/script/
