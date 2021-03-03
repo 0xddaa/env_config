@@ -29,7 +29,10 @@ apt -y install mosh global silversearcher-ag autojump
 pip install powerline-status
 
 # vim plugin
-HOME="/home/$(id -nu "$SUDO_UID")"
+USER="$(id -nu "$SUDO_UID")"
+HOME="/home/$USER"
 git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
-vim  -c 'VundleInstall' -c 'qa!'
+[ -f "$HOME/.vimrc" ] || ln -s ~/env_config/config/vimrc "$HOME/.vimrc"
+vim -c 'VundleInstall' -c 'qa!'
 "$HOME/.vim/bundle/youcompleteme/install.py" --clang-completer
+chown $USER:$USER ~/.vim
