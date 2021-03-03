@@ -9,5 +9,4 @@ pushd ~/env_config/setup
 ./package.sh
 ./link.sh
 ./tool.sh
-./hosts.sh
 popd
