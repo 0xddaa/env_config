@@ -117,8 +117,6 @@ fi
 alias py='python'
 alias tmux='TERM=xterm-256color tmux -2'
 alias se='chmod +x'
-alias clip='clip.exe'
-alias paste='powershell.exe Get-Clipboard'
 
 # environment variable
 export PATH=$PATH:~/code/script/
@@ -126,3 +124,11 @@ export EDITOR="vim"
 
 # for third-party package
 . /usr/share/autojump/autojump.bash
+
+if grep -iq Microsoft /proc/version; then
+    open() {
+        explorer.exe $(wslpath -w $1)
+    }
+    alias clip='clip.exe'
+    alias paste='powershell.exe Get-Clipboard'
+fi
